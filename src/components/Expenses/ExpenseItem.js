@@ -4,9 +4,19 @@ import ExpenseDate from './ExpenseDate';
 import Card from '../UI/Card';
 
 const ExpenseItem = ({ exepenseDate, expenseTitle, expenseAmount }) => {
+    const [newTitle, setNewTitle] = useState('');
     const [title, setTitle] = useState(expenseTitle);
+
     const clickHandler = () => {
-        setTitle('New Title....')
+        if (newTitle) {
+            setTitle(newTitle)
+            setNewTitle('')
+        } else {
+            alert('enter the fields')
+        }
+    }
+    const changeHandler = (e) => {
+        setNewTitle(e.target.value)
     }
     return (
         <Card className='expense-item'>
@@ -15,6 +25,7 @@ const ExpenseItem = ({ exepenseDate, expenseTitle, expenseAmount }) => {
                 <h2>{title}</h2>
                 <div className='expense-item__price'>{expenseAmount} $</div>
             </div>
+            <input required onChange={changeHandler} value={newTitle} type="text" style={{ marginLeft: '10px', borderRadius: '12px', padding: '10px' }} />
             <button onClick={clickHandler} style={{ marginLeft: '10px', borderRadius: '12px', padding: '10px' }}>Change Title</button>
         </Card>
     )
