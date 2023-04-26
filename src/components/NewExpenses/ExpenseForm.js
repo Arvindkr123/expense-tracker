@@ -1,47 +1,21 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './ExpenseForm.css'
 
-const ExpenseForm = ({ onSaveExpenseData }) => {
-    const [enteredTitle, setEnteredTitle] = useState('')
-    const [enteredAmount, setEnteredAmount] = useState('')
-    const [enteredDate, setEnteredDate] = useState('')
-    const titleChangeHandler = (event) => {
-        setEnteredTitle(event.target.value)
-    }
-    const amountChangeHandler = (event) => {
-        setEnteredAmount(event.target.value)
-    }
-    const dateChangeHandler = (event) => {
-        setEnteredDate(event.target.value);
-    }
-
-    const submitHandler = (event) => {
-        event.preventDefault();
-        const expenseData = {
-            title: enteredTitle,
-            amount: enteredAmount,
-            date: new Date(enteredDate)
-        }
-        onSaveExpenseData(expenseData)
-        console.log(expenseData);
-        setEnteredTitle('')
-        setEnteredAmount('')
-        setEnteredDate('')
-    }
+const ExpenseForm = () => {
     return (
-        <form onSubmit={submitHandler}>
+        <form>
             <div className='new-expense_controls'>
                 <div className='new-expense_control'>
-                    <label>Title</label>
-                    <input type="text" onChange={titleChangeHandler} value={enteredTitle} required />
+                    <label htmlFor="">Title</label>
+                    <input type="text" />
                 </div>
                 <div className='new-expense_control'>
-                    <label>Amount</label>
-                    <input type="number" min={0.01} step={0.01} onChange={amountChangeHandler} value={enteredAmount} required />
+                    <label htmlFor="">Amount</label>
+                    <input type="number" min={0.01} step={0.01} />
                 </div>
                 <div className='new-expense_control'>
-                    <label>Date</label>
-                    <input type="date" onChange={dateChangeHandler} value={enteredDate} required />
+                    <label htmlFor="">Date</label>
+                    <input type="date" />
                 </div>
             </div>
             <div className='new-expense_actions'>

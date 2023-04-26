@@ -1,5 +1,6 @@
 import React from 'react'
 import Expenses from './components/Expenses/Expenses'
+import Card from './components/UI/Card'
 import NewExpenses from './components/NewExpenses/NewExpenses'
 
 const App = () => {
@@ -16,7 +17,7 @@ const App = () => {
 
     return (
         <>
-            <NewExpenses />
+            <NewExpenses/>
             <Expenses item={expense} />
         </>
     )
