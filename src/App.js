@@ -17,7 +17,7 @@ const App = () => {
 
     return (
         <>
-            <NewExpenses/>
+            <NewExpenses />
             <Expenses item={expense} />
         </>
     )
