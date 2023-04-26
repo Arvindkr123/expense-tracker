@@ -1,6 +1,7 @@
 import React from 'react'
 import ExpenseItem from './components/ExpenseItem'
 import Expenses from './components/Expenses'
+import Card from './components/Card'
 
 const App = () => {
     let expense = [
