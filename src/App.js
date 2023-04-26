@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import Expenses from './components/Expenses/Expenses'
-import Card from './components/UI/Card'
 import NewExpenses from './components/NewExpenses/NewExpenses'
 let DUMMY_EXPENSE = [
     { id: 'e1', title: 'school fee', amount: 950, date: new Date(2023, 5, 12) },
@@ -25,4 +24,4 @@ const App = () => {
     )
 }
 
-export default App
+export default App;
