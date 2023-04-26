@@ -1,4 +1,5 @@
 import React from 'react'
+import './ExpenseDate.css';
 
 const ExpenseDate = ({ exepenseDate }) => {
     const month = exepenseDate.toLocaleString('en-US', { month: 'long' });
@@ -6,9 +7,9 @@ const ExpenseDate = ({ exepenseDate }) => {
     const day = exepenseDate.toLocaleString('en-US', { day: '2-digit' });
     return (
         <div className='expense-date'>
-            <div>{month}</div>
-            <div>{year}</div>
-            <div>{day}</div>
+            <div className='expense-date-month'>{month}</div>
+            <div className='expense-date-year'>{year}</div>
+            <div className='expense-date-day'>{day}</div>
         </div>
     )
 }
